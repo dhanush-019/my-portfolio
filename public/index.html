@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dhanush S — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-ring"></div>
+      <div class="loader-ring"></div>
+      <span class="loader-text">DS</span>
+    </div>
+    <p class="loader-label">Initializing Portfolio...</p>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- CANVAS BACKGROUND -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">DS<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#gallery" class="nav-link">Gallery</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#hero" class="mob-link">Home</a></li>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#skills" class="mob-link">Skills</a></li>
+      <li><a href="#projects" class="mob-link">Projects</a></li>
+      <li><a href="#gallery" class="mob-link">Gallery</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for opportunities
+      </div>
+      <div class="hero-avatar-wrap">
+        <div class="avatar-glow"></div>
+        <div class="hero-avatar">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="avatarGrad" cx="50%" cy="40%" r="60%">
+                <stop offset="0%" stop-color="#a78bfa"/>
+                <stop offset="100%" stop-color="#06b6d4"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="100" r="100" fill="url(#avatarGrad)" opacity="0.15"/>
+            <circle cx="100" cy="75" r="35" fill="url(#avatarGrad)" opacity="0.9"/>
+            <ellipse cx="100" cy="160" rx="55" ry="40" fill="url(#avatarGrad)" opacity="0.7"/>
+            <text x="100" y="87" text-anchor="middle" fill="white" font-size="38" font-family="Syne" font-weight="800">DS</text>
+          </svg>
+        </div>
+      </div>
+      <h1 class="hero-name">Dhanush<span class="accent"> S</span></h1>
+      <div class="hero-typed-wrap">
+        <span class="typed-prefix">I'm a </span>
+        <span id="typed" class="typed-text"></span>
+        <span class="typed-cursor">|</span>
+      </div>
+      <div class="hero-meta">
+        <span class="meta-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Kristu Jayanti University</span>
+        <span class="meta-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z"/></svg> 25AIMA19</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn-primary">View Work</a>
+        <a href="#contact" class="btn-ghost">Hire Me</a>
+      </div>
+      <div class="hero-socials">
+        <a href="#" class="social-icon" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.31 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.23 1.84 1.23 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 22.3 24 17.81 24 12.5 24 5.87 18.63.5 12 .5z"/></svg>
+        </a>
+        <a href="#" class="social-icon" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM3.56 20.45h3.56V9H3.56v11.45z"/></svg>
+        </a>
+        <a href="#" class="social-icon" title="Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2h3.56l-7.77 8.88L23 22h-7.16l-5.6-7.33L4.06 22H.5l8.32-9.5L1 2h7.34l5.06 6.63L18.24 2zm-1.25 18h1.97L7.1 4.04H4.99L17 20z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+
+    <!-- Floating orbs -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </section>
+
+  <!-- ═══════════════════════════════ ABOUT ══════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-label">01 / About</div>
+      <h2 class="section-title reveal">Who Am I<span class="accent">?</span></h2>
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-card-glow"></div>
+          <div class="about-stats-grid">
+            <div class="stat-box"><span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span><p>Projects</p></div>
+            <div class="stat-box"><span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span><p>Technologies</p></div>
+            <div class="stat-box"><span class="stat-num" data-target="2">0</span><span class="stat-plus">+</span><p>Years Learning</p></div>
+            <div class="stat-box"><span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span><p>Awards</p></div>
+          </div>
+          <div class="about-tag-cloud">
+            <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
+            <span class="tag">Node.js</span><span class="tag">React</span><span class="tag">MySQL</span>
+            <span class="tag">Python</span><span class="tag">Git</span>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <p class="about-intro">Hello! I'm <strong>Dhanush S</strong>, a passionate student and web developer at <strong>Kristu Jayanti University</strong>.</p>
+          <p>I specialize in crafting high-performance, visually engaging web experiences. From pixel-perfect frontends to robust backends — I love turning ideas into digital reality.</p>
+          <p>With a curious mind and a drive for excellence, I consistently push the boundaries of what's possible. Whether it's a sleek UI or a data-driven application, I bring precision and creativity to every project.</p>
+          <div class="about-info-row">
+            <div class="info-item"><span class="info-label">Register No.</span><span class="info-val">25AIMA19</span></div>
+            <div class="info-item"><span class="info-label">College</span><span class="info-val">Kristu Jayanti University</span></div>
+            <div class="info-item"><span class="info-label">Role</span><span class="info-val">Student & Web Developer</span></div>
+            <div class="info-item"><span class="info-label">Status</span><span class="info-val online">🟢 Open to Work</span></div>
+          </div>
+          <a href="#contact" class="btn-primary" style="margin-top:2rem; display:inline-block;">Let's Connect →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ SKILLS ═════════════════════════════ -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-label">02 / Skills</div>
+      <h2 class="section-title reveal">Tech Arsenal<span class="accent">.</span></h2>
+      <div class="skills-layout">
+        <div class="skills-bars reveal">
+          <h3 class="skills-sub">Proficiency</h3>
+          <div class="skill-item">
+            <div class="skill-info"><span>HTML & CSS</span><span class="skill-pct">92%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>JavaScript</span><span class="skill-pct">80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>React.js</span><span class="skill-pct">72%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Node.js</span><span class="skill-pct">68%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="68"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>MySQL / TiDB</span><span class="skill-pct">65%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Python</span><span class="skill-pct">60%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+          </div>
+        </div>
+
+        <div class="skills-cards reveal">
+          <h3 class="skills-sub">Tools & Ecosystem</h3>
+          <div class="tool-grid">
+            <div class="tool-card"><div class="tool-icon">⚡</div><p>VS Code</p></div>
+            <div class="tool-card"><div class="tool-icon">🐙</div><p>GitHub</p></div>
+            <div class="tool-card"><div class="tool-icon">🐳</div><p>Docker</p></div>
+            <div class="tool-card"><div class="tool-icon">🎨</div><p>Figma</p></div>
+            <div class="tool-card"><div class="tool-icon">☁️</div><p>Render</p></div>
+            <div class="tool-card"><div class="tool-icon">🛢️</div><p>TiDB Cloud</p></div>
+            <div class="tool-card"><div class="tool-icon">📦</div><p>npm</p></div>
+            <div class="tool-card"><div class="tool-icon">🔥</div><p>Firebase</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ PROJECTS ═══════════════════════════ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-label">03 / Projects</div>
+      <h2 class="section-title reveal">Featured Work<span class="accent">.</span></h2>
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-num">01</div>
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <span class="project-tag">Full-Stack</span>
+            <div class="project-links">
+              <a href="#" title="GitHub">↗</a>
+              <a href="#" title="Live">🔗</a>
+            </div>
+          </div>
+          <h3 class="project-title">Smart Campus Portal</h3>
+          <p class="project-desc">A unified student-faculty management platform with real-time notifications, attendance tracking, and grade analytics built on Node.js and MySQL.</p>
+          <div class="project-tech"><span>Node.js</span><span>MySQL</span><span>Express</span><span>HTML/CSS</span></div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-num">02</div>
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <span class="project-tag">Frontend</span>
+            <div class="project-links">
+              <a href="#" title="GitHub">↗</a>
+              <a href="#" title="Live">🔗</a>
+            </div>
+          </div>
+          <h3 class="project-title">NeonWeather Dashboard</h3>
+          <p class="project-desc">A visually immersive weather application with animated SVG maps, live data via OpenWeather API, and dark-mode glassmorphism UI.</p>
+          <div class="project-tech"><span>JavaScript</span><span>REST API</span><span>CSS3</span><span>SVG</span></div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-num">03</div>
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <span class="project-tag">Backend</span>
+            <div class="project-links">
+              <a href="#" title="GitHub">↗</a>
+              <a href="#" title="Live">🔗</a>
+            </div>
+          </div>
+          <h3 class="project-title">Portfolio Contact API</h3>
+          <p class="project-desc">A secure Node.js REST API with TiDB Cloud integration, rate limiting, email notifications, and environment-based configuration via dotenv.</p>
+          <div class="project-tech"><span>Node.js</span><span>TiDB</span><span>dotenv</span><span>Express</span></div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-num">04</div>
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <span class="project-tag">AI / Python</span>
+            <div class="project-links">
+              <a href="#" title="GitHub">↗</a>
+              <a href="#" title="Live">🔗</a>
+            </div>
+          </div>
+          <h3 class="project-title">StudyBot AI</h3>
+          <p class="project-desc">An intelligent study assistant using Python and OpenAI GPT, with PDF ingestion, Q&A generation, and a sleek chat interface for students.</p>
+          <div class="project-tech"><span>Python</span><span>OpenAI</span><span>React</span><span>Flask</span></div>
+        </div>
+
+        <div class="project-card reveal project-card--featured">
+          <div class="project-num">05</div>
+          <div class="project-glow"></div>
+          <div class="featured-badge">★ Featured</div>
+          <div class="project-header">
+            <span class="project-tag">Full-Stack</span>
+            <div class="project-links">
+              <a href="#" title="GitHub">↗</a>
+              <a href="#" title="Live">🔗</a>
+            </div>
+          </div>
+          <h3 class="project-title">E-Commerce Nexus</h3>
+          <p class="project-desc">A production-ready e-commerce platform with cart management, Razorpay payments, admin dashboard, and real-time inventory — deployed on Render.</p>
+          <div class="project-tech"><span>React</span><span>Node.js</span><span>MySQL</span><span>Razorpay</span></div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-num">06</div>
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <span class="project-tag">Game / JS</span>
+            <div class="project-links">
+              <a href="#" title="GitHub">↗</a>
+              <a href="#" title="Live">🔗</a>
+            </div>
+          </div>
+          <h3 class="project-title">CodeQuest Gamified Learning</h3>
+          <p class="project-desc">A gamified coding challenge platform with leaderboards, badge systems, and daily challenges — built to make learning programming fun.</p>
+          <div class="project-tech"><span>JavaScript</span><span>Firebase</span><span>CSS3</span><span>Canvas API</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ GALLERY ═══════════════════════════ -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <div class="section-label">04 / Gallery</div>
+      <h2 class="section-title reveal">Creative Space<span class="accent">.</span></h2>
+      <div class="gallery-grid">
+        <div class="gallery-item g-tall reveal">
+          <div class="gallery-inner" style="background: linear-gradient(135deg,#6d28d9,#0891b2)">
+            <div class="g-label">UI Design Explorations</div>
+            <div class="g-overlay">
+              <svg viewBox="0 0 100 100" class="g-icon"><rect x="10" y="10" width="35" height="35" rx="5" fill="none" stroke="white" stroke-width="3"/><rect x="55" y="10" width="35" height="35" rx="5" fill="none" stroke="white" stroke-width="3"/><rect x="10" y="55" width="35" height="35" rx="5" fill="none" stroke="white" stroke-width="3"/><rect x="55" y="55" width="35" height="35" rx="5" fill="none" stroke="white" stroke-width="3"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-inner" style="background: linear-gradient(135deg,#0891b2,#16a34a)">
+            <div class="g-label">Web Animations</div>
+            <div class="g-overlay">
+              <svg viewBox="0 0 100 100" class="g-icon"><circle cx="50" cy="50" r="35" fill="none" stroke="white" stroke-width="3"/><path d="M50 15 L50 50 L72 72" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-inner" style="background: linear-gradient(135deg,#b91c1c,#d97706)">
+            <div class="g-label">Data Visualizations</div>
+            <div class="g-overlay">
+              <svg viewBox="0 0 100 100" class="g-icon"><rect x="15" y="60" width="15" height="25" fill="none" stroke="white" stroke-width="3"/><rect x="42" y="40" width="15" height="45" fill="none" stroke="white" stroke-width="3"/><rect x="69" y="20" width="15" height="65" fill="none" stroke="white" stroke-width="3"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item g-wide reveal">
+          <div class="gallery-inner" style="background: linear-gradient(135deg,#7c3aed,#db2777)">
+            <div class="g-label">Hackathon Projects</div>
+            <div class="g-overlay">
+              <svg viewBox="0 0 100 100" class="g-icon"><path d="M50 10 L90 50 L50 90 L10 50 Z" fill="none" stroke="white" stroke-width="3"/><circle cx="50" cy="50" r="10" fill="white"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-inner" style="background: linear-gradient(135deg,#0f766e,#7c3aed)">
+            <div class="g-label">API Integrations</div>
+            <div class="g-overlay">
+              <svg viewBox="0 0 100 100" class="g-icon"><path d="M20 50 Q35 20 50 50 Q65 80 80 50" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CONTACT ═══════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-label">05 / Contact</div>
+      <h2 class="section-title reveal">Let's Build<span class="accent"> Together.</span></h2>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="contact-lead">Have a project in mind, or just want to say hi? Drop me a message — I respond within 24 hours.</p>
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <span class="c-icon">📧</span>
+              <span>dhanush@example.com</span>
+            </div>
+            <div class="contact-detail-item">
+              <span class="c-icon">📍</span>
+              <span>Bengaluru, Karnataka, India</span>
+            </div>
+            <div class="contact-detail-item">
+              <span class="c-icon">🎓</span>
+              <span>Kristu Jayanti University</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="john@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" name="subject" placeholder="Project Collaboration" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full">
+            <span class="btn-label">Send Message</span>
+            <span class="btn-arrow">→</span>
+          </button>
+          <p class="form-success" id="formSuccess">✅ Message sent successfully!</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-logo">DS<span class="accent">.</span></p>
+      <p class="footer-copy">© 2025 Dhanush S — Crafted with passion at Kristu Jayanti University</p>
+      <p class="footer-reg">Reg: 25AIMA19</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
